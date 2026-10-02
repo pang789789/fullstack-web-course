@@ -1,4 +1,3 @@
-@"
 # Chapter 01 학습 기록
 
 ## Browser와 Web Server의 차이
@@ -20,4 +19,3 @@ Live Server와 Web Server의 역할에 대해 질문했다.
 
 ## 내가 직접 검증한 내용
 127.0.0.1:5500 주소에서 index.html 페이지가 실행되는 것을 확인했다.
-"@ | Set-Content -Encoding UTF8 README.md
