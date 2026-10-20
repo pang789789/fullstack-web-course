@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Course Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header class="page-header">
+        <div>
+            <p class="eyebrow">PHASE 01</p>
+            <h1>Responsive Course Dashboard</h1>
+        </div>
+        <nav class="page-nav" aria-label="주 메뉴">
+            <a href="#courses">Courses</a>
+            <a href="#progress">Progress</a>
+            <a href="#profile">Profile</a>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <section class="intro">
+            <h2>나의 강의</h2>
+            <p>화면 크기를 바꾸면서 카드의 열 수와 Header 방향을 확인해 보세요.</p>
+        </section>
+
+        <section id="courses" class="course-grid" aria-label="강의 목록">
+            <article class="course-card">
+                <span>Chapter 01</span>
+                <h3>Web Architecture</h3>
+                <p>진행 상태: 완료</p>
+                <progress value="100" max="100">100%</progress>
+            </article>
+            <article class="course-card">
+                <span>Chapter 02</span>
+                <h3>HTML Structure</h3>
+                <p>진행 상태: 완료</p>
+                <progress value="100" max="100">100%</progress>
+            </article>
+            <article class="course-card">
+                <span>Chapter 03</span>
+                <h3>Forms and Tables</h3>
+                <p>진행 상태: 완료</p>
+                <progress value="100" max="100">100%</progress>
+            </article>
+            <article class="course-card">
+                <span>Chapter 04</span>
+                <h3>CSS Basics</h3>
+                <p>진행 상태: 완료</p>
+                <progress value="100" max="100">100%</progress>
+            </article>
+            <article class="course-card">
+                <span>Chapter 05</span>
+                <h3>Box Model</h3>
+                <p>진행 상태: 완료</p>
+                <progress value="100" max="100">100%</progress>
+            </article>
+            <article class="course-card">
+                <span>Chapter 06</span>
+                <h3>Flexbox and Grid</h3>
+                <p>진행 상태: 학습 중</p>
+                <progress value="75" max="100">75%</progress>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
