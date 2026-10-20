@@ -1,0 +1,85 @@
+/* 모든 요소가 padding과 border를 너비 안에 포함하도록 초기화 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 화면 중앙에 계산기 배치 */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #1f2937;
+    background-color: #f3f4f6;
+    font-family: Arial, sans-serif;
+}
+
+/* 계산기 카드 */
+.calculator {
+    width: 100%;
+    max-width: 420px;
+    padding: 28px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+p {
+    margin-bottom: 24px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+/* label은 입력 요소 위에 한 줄로 표시 */
+label {
+    display: block;
+    margin: 16px 0 8px;
+    font-weight: bold;
+}
+
+/* 입력창, 선택창, 버튼의 공통 크기 */
+input,
+select,
+button {
+    width: 100%;
+    padding: 11px 12px;
+    border-radius: 7px;
+    font: inherit;
+}
+
+/* 입력 요소 기본 모양 */
+input,
+select {
+    border: 1px solid #d1d5db;
+    background-color: white;
+}
+
+/* 키보드 또는 마우스로 입력 요소를 선택했을 때 강조 */
+input:focus,
+select:focus {
+    border-color: #2563eb;
+    outline: 2px solid #bfdbfe;
+}
+
+/* 계산 버튼 */
+button {
+    margin-top: 22px;
+    border: 0;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* 마우스를 버튼 위에 올렸을 때 색상 변경 */
+button:hover {
+    background-color: #1d4ed8;
+}
