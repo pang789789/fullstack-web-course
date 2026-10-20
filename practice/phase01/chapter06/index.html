@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox 핵심 개념 실습</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Flexbox 핵심 개념 실습</h1>
+    <p id="description" class="description">
+        현재 설정: align-items: flex-end (Cross Axis 끝 정렬)
+    </p>
+
+    <div class="controls">
+        <button type="button" data-action="jc-start">1. JC: flex-start</button>
+        <button type="button" data-action="jc-center">2. JC: center</button>
+        <button type="button" data-action="jc-between">3. JC: space-between</button>
+        <button type="button" data-action="jc-evenly">4. JC: space-evenly</button>
+        <button type="button" data-action="ai-center">5. AI: center</button>
+        <button type="button" data-action="ai-end">6. AI: flex-end</button>
+        <button type="button" data-action="gap">7. gap: 20px</button>
+        <button type="button" data-action="direction">8. Column 변경 (축 전환)</button>
+    </div>
+
+    <div id="flexContainer" class="flex-container">
+        <div class="flex-item item-1">1</div>
+        <div class="flex-item item-2">2</div>
+        <div class="flex-item item-3">3</div>
+    </div>
+
+    <script>
+        const container = document.querySelector('#flexContainer');
+        const description = document.querySelector('#description');
+
+        const actions = {
+            'jc-start': () => {
+                container.style.justifyContent = 'flex-start';
+                description.textContent = '현재 설정: justify-content: flex-start (Main Axis 시작 정렬)';
+            },
+            'jc-center': () => {
+                container.style.justifyContent = 'center';
+                description.textContent = '현재 설정: justify-content: center (Main Axis 가운데 정렬)';
+            },
+            'jc-between': () => {
+                container.style.justifyContent = 'space-between';
+                description.textContent = '현재 설정: justify-content: space-between (양 끝 정렬)';
+            },
+            'jc-evenly': () => {
+                container.style.justifyContent = 'space-evenly';
+                description.textContent = '현재 설정: justify-content: space-evenly (동일 간격 정렬)';
+            },
+            'ai-center': () => {
+                container.style.alignItems = 'center';
+                description.textContent = '현재 설정: align-items: center (Cross Axis 가운데 정렬)';
+            },
+            'ai-end': () => {
+                container.style.alignItems = 'flex-end';
+                description.textContent = '현재 설정: align-items: flex-end (Cross Axis 끝 정렬)';
+            },
+            gap: () => {
+                container.style.gap = '20px';
+                description.textContent = '현재 설정: gap: 20px (아이템 사이 간격)';
+            },
+            direction: () => {
+                const isColumn = container.style.flexDirection === 'column';
+                container.style.flexDirection = isColumn ? 'row' : 'column';
+                description.textContent = `현재 설정: flex-direction: ${isColumn ? 'row' : 'column'} (축 전환)`;
+            }
+        };
+
+        document.querySelector('.controls').addEventListener('click', (event) => {
+            const action = event.target.dataset.action;
+            if (action && actions[action]) actions[action]();
+        });
+    </script>
+</body>
+</html>
