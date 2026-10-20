@@ -1,0 +1,6 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { padding: 20px 0; background: #f8f9fa; font-family: sans-serif; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+h1 { margin-bottom: 10px; }
+p { margin-bottom: 20px; color: #666; }
+.card { width: 100%; padding: 30px; border-radius: 10px; background: #e7f1ff; color: #084298; }

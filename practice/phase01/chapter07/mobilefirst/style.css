@@ -1,0 +1,12 @@
+/* 기본 스타일 초기화 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { padding: 20px 0; background-color: #f8f9fa; font-family: sans-serif; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+h1 { margin-bottom: 10px; color: #212529; font-size: 1.75rem; }
+.description { margin-bottom: 20px; color: #666; }
+.member-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.member-card { padding: 20px; border: 1px solid #ddd; border-radius: 8px; background: white; }
+.member-card h3 { margin-bottom: 8px; }
+.member-card p { color: #666; overflow-wrap: anywhere; }
+@media (min-width: 768px) { .member-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .member-grid { grid-template-columns: repeat(3, 1fr); } }

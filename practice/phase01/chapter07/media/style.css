@@ -1,0 +1,11 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { padding: 20px 0; background: #f8f9fa; font-family: sans-serif; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+h1 { margin-bottom: 10px; }
+.description { margin-bottom: 20px; color: #666; }
+.card-list { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.card { padding: 30px; border-radius: 8px; background: #d1e7dd; text-align: center; }
+@media (min-width: 768px) {
+    .card-list { grid-template-columns: repeat(2, 1fr); }
+    .card { background: #cfe2ff; }
+}
