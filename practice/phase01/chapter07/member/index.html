@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 관리 - 반응형 레이아웃</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>회원 관리 시스템</h1>
+            <button type="button" class="add-button">+ 회원 추가</button>
+        </header>
+
+        <section class="search-section" aria-label="회원 검색 및 필터">
+            <input type="search" placeholder="이름 또는 이메일 검색..." aria-label="이름 또는 이메일 검색">
+            <select aria-label="회원 상태 필터">
+                <option>전체 상태</option>
+                <option>활동 중</option>
+                <option>비활성</option>
+            </select>
+        </section>
+
+        <main class="member-grid">
+            <article class="card">
+                <div class="card-heading">
+                    <h2>홍길동</h2>
+                    <span class="status active">활동 중</span>
+                </div>
+                <p>hong@example.com</p>
+                <p>역할: 관리자</p>
+            </article>
+
+            <article class="card">
+                <div class="card-heading">
+                    <h2>김영희</h2>
+                    <span class="status active">활동 중</span>
+                </div>
+                <p>kim@example.com</p>
+                <p>역할: 일반 회원</p>
+            </article>
+
+            <article class="card">
+                <div class="card-heading">
+                    <h2>이철수</h2>
+                    <span class="status inactive">비활성</span>
+                </div>
+                <p>lee@example.com</p>
+                <p>역할: 일반 회원</p>
+            </article>
+
+            <article class="card">
+                <div class="card-heading">
+                    <h2>박민수</h2>
+                    <span class="status active">활동 중</span>
+                </div>
+                <p>park@example.com</p>
+                <p>역할: 매니저</p>
+            </article>
+        </main>
+    </div>
+</body>
+</html>

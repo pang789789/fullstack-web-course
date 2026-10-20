@@ -1,0 +1,149 @@
+/* 기본 스타일 초기화 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 20px 0;
+    color: #333;
+    background-color: #f8f9fa;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 1.75rem;
+    color: #212529;
+}
+
+button,
+input,
+select {
+    max-width: 100%;
+    font: inherit;
+}
+
+.add-button {
+    width: 100%;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 6px;
+    background-color: #0d6efd;
+    color: white;
+    cursor: pointer;
+}
+
+.search-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-section input,
+.search-section select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.card {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.card h2 {
+    font-size: 1.25rem;
+}
+
+.card p {
+    margin-top: 7px;
+    color: #6c757d;
+    overflow-wrap: anywhere;
+}
+
+.status {
+    flex-shrink: 0;
+    padding: 5px 9px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.status.active {
+    color: #198754;
+    background-color: #e8f7ef;
+}
+
+.status.inactive {
+    color: #dc3545;
+    background-color: #fdebec;
+}
+
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .add-button {
+        width: auto;
+    }
+
+    .search-section {
+        flex-direction: row;
+    }
+
+    .search-section input {
+        flex: 1;
+    }
+
+    .search-section select {
+        width: 220px;
+    }
+
+    .member-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .member-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
