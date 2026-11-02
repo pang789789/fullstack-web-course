@@ -2,14 +2,6 @@
 
 ## API Contract
 
-### PUT /members/{member_id}
-
-- `name`, `email`, `age` 전체 필드 필수
-- 성공: `200 OK`
-- 회원 없음: `404 Not Found`
-- 이메일 중복: `409 Conflict`
-- 입력값 오류: `422 Unprocessable Entity`
-
 ### PATCH /members/{member_id}
 
 - 전달한 필드만 부분 수정
@@ -43,3 +35,9 @@
 - 회원 존재 여부 확인
 - 전달된 필드만 수정
 - 성공 후 `commit()` 실행
+
+## STEP 05. 수정 결과 조회
+
+- `GET /members/{member_id}` 구현
+- PATCH 응답과 PostgreSQL 조회 결과가 같은지 확인
+- 회원이 없으면 `404 Not Found` 반환

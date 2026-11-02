@@ -15,12 +15,6 @@ class MemberResponse(BaseModel):
     age: int
 
 
-class MemberUpdate(BaseModel):
-    name: str = Field(min_length=1, max_length=100)
-    email: EmailStr
-    age: int = Field(ge=0, le=150)
-
-
 class MemberPatch(BaseModel):
     name: str | None = Field(default=None, min_length=1, max_length=100)
     email: EmailStr | None = None
@@ -32,44 +26,6 @@ class MemberPatch(BaseModel):
             if getattr(self, field) is None:
                 raise ValueError(f"{field} cannot be null")
         return self
-
-
-@app.put("/members/{member_id}", response_model=MemberResponse)
-def update_member(member_id: int, member: MemberUpdate):
-    with get_connection() as conn:
-        with conn.cursor(row_factory=dict_row) as cur:
-            cur.execute(
-                "SELECT id FROM members WHERE id = %s",
-                (member_id,),
-            )
-            if cur.fetchone() is None:
-                raise HTTPException(status_code=404, detail="Member not found")
-
-            cur.execute(
-                """
-                SELECT id
-                FROM members
-                WHERE email = %s AND id <> %s
-                """,
-                (str(member.email), member_id),
-            )
-            if cur.fetchone() is not None:
-                raise HTTPException(status_code=409, detail="Email already exists")
-
-            cur.execute(
-                """
-                UPDATE members
-                SET name = %s,
-                    email = %s,
-                    age = %s
-                WHERE id = %s
-                RETURNING id, name, email, age
-                """,
-                (member.name, str(member.email), member.age, member_id),
-            )
-            updated = cur.fetchone()
-            conn.commit()
-            return updated
 
 
 @app.patch("/members/{member_id}", response_model=MemberResponse)
@@ -128,3 +84,23 @@ def patch_member(member_id: int, member: MemberPatch):
             updated = cur.fetchone()
             conn.commit()
             return updated
+
+
+@app.get("/members/{member_id}", response_model=MemberResponse)
+def get_member(member_id: int):
+    with get_connection() as conn:
+        with conn.cursor(row_factory=dict_row) as cur:
+            cur.execute(
+                """
+                SELECT id, name, email, age
+                FROM members
+                WHERE id = %s
+                """,
+                (member_id,),
+            )
+            member = cur.fetchone()
+
+    if member is None:
+        raise HTTPException(status_code=404, detail="Member not found")
+
+    return member
