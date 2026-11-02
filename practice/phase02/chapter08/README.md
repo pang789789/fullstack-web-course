@@ -41,3 +41,9 @@
 - `GET /members/{member_id}` 구현
 - PATCH 응답과 PostgreSQL 조회 결과가 같은지 확인
 - 회원이 없으면 `404 Not Found` 반환
+
+## STEP 06. 조회 Evidence 확인
+
+- 실습 회원: `id=8`, `홍길동`, `hong8@example.com`, `27`
+- `GET /members/8` 조회 성공
+- API 응답과 PostgreSQL 저장값이 일치하는 것을 확인
